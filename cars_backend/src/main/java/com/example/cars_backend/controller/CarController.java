@@ -47,6 +47,6 @@ public class CarController {
   public ResponseEntity<String> deleteCar(@PathVariable("id") Long id){
       carService.deleteCar(id);
 
-      return ResponseEntity.ok("Car has been successgully deleted");
+      return ResponseEntity.ok("Car has been successfully deleted");
   }
 }
