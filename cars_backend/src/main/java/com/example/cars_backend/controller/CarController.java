@@ -49,4 +49,10 @@ public class CarController {
 
       return ResponseEntity.ok("Car has been successfully deleted");
   }
+
+  @PutMapping("{id}")
+    public ResponseEntity<CarDto> updateCar(@PathVariable("id") Long id, @Validated @RequestBody CarDto carDto) {
+        CarDto carUpdated = carService.updateCar(id,carDto);
+        return ResponseEntity.ok(carUpdated);
+  }
 }

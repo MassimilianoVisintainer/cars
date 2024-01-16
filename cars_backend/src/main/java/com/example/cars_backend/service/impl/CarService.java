@@ -73,4 +73,23 @@ public class CarService implements ICarService {
 
         return carMapper.fromCarToCarDto(car);
     }
+
+    @Override
+    public CarDto updateCar(Long id, CarDto carDto) {
+        Car car = carRepository.getReferenceById(id);
+
+        if (car == null) {
+            throw new ResourceNotFoundException("Car is not existing with the following id :" + id);
+        }
+
+        Brand brand = brandRepository.findByName(carDto.brand()).orElse(new Brand(carDto.brand()));
+
+        car.setModel(carDto.model());
+        car.setYearOfManufacture(carDto.year());
+        car.setBrand(brand);
+        Car carUpdated = carRepository.save(car);
+
+        return  carMapper.fromCarToCarDto(carUpdated);
+
+    }
 }

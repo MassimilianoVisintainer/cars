@@ -13,4 +13,6 @@ public interface ICarService {
     void deleteCar(Long id);
 
     CarDto save(CarDto carDto);
+
+    CarDto updateCar(Long id, CarDto carDto);
 }
