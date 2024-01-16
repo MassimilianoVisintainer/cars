@@ -3,7 +3,6 @@ import './App.css';
 import Car from './Components/Car';
 import 'bootstrap/dist/css/bootstrap.css';
 import CarForm from './Components/CarForm';
-import CarUpdate from './Components/CarUpdate';
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
     <Routes>
     <Route path='/' element={<Car/>}/>
     <Route path='/addCar' element={<CarForm/>}/>
-    <Route path='/updateCar/:id' element={<CarUpdate/>}/>
     </Routes>
     </BrowserRouter>
     
