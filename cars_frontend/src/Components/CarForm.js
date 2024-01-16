@@ -10,39 +10,17 @@ function CarForm() {
   const navigator = useNavigate();
 
   function saveCar(e) {
-
     e.preventDefault();
-   
-    const carAdded = {brand, model, year };
-    addCar(carAdded).then((response) => {
-      navigator("/");
-      return response.data;
-    }).catch((error) => {
-      console.error(error);
-    })
 
-    
-    function validateForm() {
-
-       let isValid = true;
-      if (brand == null) {
-          console.log("Brand missing");
-          isValid =false;
-      }
-      if( model == null) {
-        console.log("Brand missing");
-        isValid =false;
-
-      }
-      if (year == null) {
-        console.log("Year missing");
-        isValid =false;
-      }
-
-      return isValid;
-     
-    }
-
+    const carAdded = { brand, model, year };
+    addCar(carAdded)
+      .then((response) => {
+        navigator("/");
+        return response.data;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   return (
