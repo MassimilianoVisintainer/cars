@@ -13,11 +13,3 @@ export const deleteCar = (id) => {
 export const addCar = (carAdded) => {
     return axios.post(REST_API_BASE_URL, carAdded);
 }
-
-export const updateCar = (id, carUpdated) => {
-    return axios.put(`${REST_API_BASE_URL}/${id}`, carUpdated);
-}
-
-export const getCarById = (id) => {
-    return axios.get(`${REST_API_BASE_URL}/${id}`);
-}

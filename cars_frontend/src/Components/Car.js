@@ -29,10 +29,6 @@ function Car() {
         navigator("/addCar");
     }
 
-    function changeCar(id) {
-        navigator(`/updateCar/${id}`);
-    }
-
   return (
     <div>
         <h1 className="text-center">Cars</h1>
@@ -58,8 +54,7 @@ function Car() {
                             <td>{car.brand}</td>
                             <td>
                             <button type="button" className="btn btn-dark"  onClick={() => removeCar(car.id)}>Delete</button>
-                            <button type="button" className="btn btn-dark" style={{marginLeft: '10px'}} onClick={() => changeCar(car.id)}>Update</button>
-                            </td>                            
+                            </td>
                         </tr>
                     )
                 }
